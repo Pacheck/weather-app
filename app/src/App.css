@@ -6,5 +6,6 @@
   width: 100vw;
   height: 100vh;
 
-  background-image: linear-gradient(#f38201, rgb(243, 184, 21));
+  /* background-image: linear-gradient(#f38201, rgb(243, 184, 21)); */
+  background-image: linear-gradient(rgba(8, 223, 238, 0.897), rgb(32, 90, 184));
 }
