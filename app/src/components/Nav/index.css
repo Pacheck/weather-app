@@ -1,0 +1,19 @@
+.nav-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 7%;
+  /* filter: blur(4px); */
+}
+
+ul {
+  list-style: cross-fade(rgb(216, 59, 59));
+}
+
+.nav-content li::before {
+  filter: blur(10px);
+}
+
+.nav-content li {
+  color: rgb(29, 22, 22);
+}
