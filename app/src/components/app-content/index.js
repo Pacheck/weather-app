@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-import { BrowserRouter, Link, Switch, Route, Router } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 //components
 import Search from '../Search';
