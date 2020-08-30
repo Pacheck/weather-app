@@ -2,18 +2,21 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 7%;
-  /* filter: blur(4px); */
+
+  height: 10%;
+  width: 100%;
+
+  overflow: hidden;
+
+  list-style: none;
+
+  text-decoration: none;
+
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-ul {
-  list-style: cross-fade(rgb(216, 59, 59));
-}
-
-.nav-content li::before {
-  filter: blur(10px);
-}
-
-.nav-content li {
-  color: rgb(29, 22, 22);
+a {
+  text-decoration: none;
+  color: rgb(234, 234, 243);
 }
