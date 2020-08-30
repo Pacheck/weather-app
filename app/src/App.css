@@ -6,6 +6,9 @@
   width: 100vw;
   height: 100vh;
 
-  /* background-image: linear-gradient(#f38201, rgb(243, 184, 21)); */
-  background-image: linear-gradient(rgba(8, 223, 238, 0.897), rgb(32, 90, 184));
+  /* background-image: linear-gradient(rgba(8, 223, 238, 0.897), rgb(32, 90, 184)); */
+  background-image: linear-gradient(
+    rgba(141, 151, 168, 0.835),
+    rgba(206, 201, 201, 0.808)
+  );
 }
