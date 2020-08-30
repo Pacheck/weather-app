@@ -7,10 +7,10 @@ const Nav = () => {
   return (
     <ul className="nav-content">
       <li>
-        <Link to="/Logo">Logo</Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/">Home</Link>
+        <Link to="/Search">Search</Link>
       </li>
       <li>
         <Link to="/About">About</Link>
