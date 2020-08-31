@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 import sunrise from '../../assets/weather-icons/sunrise.png';
+import sunset from '../../assets/weather-icons/sunset.png';
 
 const API_KEY = 'a872c03613ce4a71b1f265af24764da0';
 
@@ -16,6 +17,7 @@ const City = (props) => {
     temperature: '',
     sunrise: '',
     sunset: '',
+    icon: '',
   };
   // const [cityName, setCityName] = useState('');
   // const [temperature, setTemperature] = useState('');
@@ -46,13 +48,16 @@ const City = (props) => {
 
   return (
     <div>
-      <h1>{cityData.cityName}</h1>
-      <h2>{cityData.temperature} ºC</h2>
-      <span className="sunrise-content">
+      <h1 className="city-name">{cityData.cityName}</h1>
+      <h2 className="city-temperature">{cityData.temperature} ºC</h2>
+      <span className="city-sunrise">
         <h2>{cityData.sunrise}</h2>
-        <img src={sunrise} alt={sunrise} />
+        <img src={sunrise} alt="sunrise" />
       </span>
-      <h2>{cityData.sunset}</h2>
+      <span className="city-sunset">
+        <h2 className="city-sunset">{cityData.sunset}</h2>
+        <img src={sunset} alt="sunset" />
+      </span>
     </div>
   );
 };
