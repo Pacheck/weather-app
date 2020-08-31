@@ -42,6 +42,7 @@ const City = (props) => {
       temperature: data.temp,
       sunrise: data.sunrise,
       sunset: data.sunset,
+      icon: data.weather.icon,
     });
     console.log(response);
   };
