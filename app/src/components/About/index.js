@@ -1,9 +1,7 @@
 import React from 'react';
 
-import City from '../City';
-
 const About = () => {
-  return <City />;
+  return <h2>About</h2>;
 };
 
 export default About;
