@@ -11,7 +11,9 @@ const Search = () => {
   const [showCity, setShowCity] = useState(false);
 
   function handleSearchCity() {
-    setShowCity(!showCity);
+    if (userInput) {
+      setShowCity(!showCity);
+    }
     console.log(userInput);
   }
 
