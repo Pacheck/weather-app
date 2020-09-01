@@ -63,7 +63,7 @@ const City = (props) => {
       <BiArrowBack
         size={40}
         alt="voltar"
-        onClick={props.handleSearchCity}
+        onClick={props.handlerClear}
         style={{ cursor: 'pointer' }}
       />
     </div>

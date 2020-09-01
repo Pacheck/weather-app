@@ -17,6 +17,10 @@ const Search = () => {
     console.log(userInput);
   }
 
+  function handlerClear() {
+    setUserInput('');
+  }
+
   return (
     <>
       {!showCity && (
@@ -30,9 +34,7 @@ const Search = () => {
           <button onClick={handleSearchCity}>Send</button>
         </div>
       )}
-      {showCity && (
-        <City citie={userInput} handleSearchCity={handleSearchCity} />
-      )}
+      {showCity && <City citie={userInput} />}
     </>
   );
 };
