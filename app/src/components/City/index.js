@@ -7,8 +7,7 @@ import Axios from 'axios';
 import sunrise from '../../assets/weather-icons/sunrise.png';
 import sunset from '../../assets/weather-icons/sunset.png';
 
-import sunrise1 from '../../assets/weather-icons/sunrise1.png';
-import sunset1 from '../../assets/weather-icons/sunset1.png';
+import { BiArrowBack } from 'react-icons/bi';
 
 const API_KEY = 'a872c03613ce4a71b1f265af24764da0';
 
@@ -58,9 +57,15 @@ const City = (props) => {
         <img src={sunrise} alt="sunrise" />
       </span>
       <span className="city-sunset">
-        <h2 className="city-sunset">{cityData.sunset}</h2>
+        <h2>{cityData.sunset}</h2>
         <img src={sunset} alt="sunset" />
       </span>
+      <BiArrowBack
+        size={40}
+        alt="voltar"
+        onClick={props.handleSearchCity}
+        style={{ cursor: 'pointer' }}
+      />
     </div>
   );
 };
