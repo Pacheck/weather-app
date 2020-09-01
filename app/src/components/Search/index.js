@@ -30,7 +30,9 @@ const Search = () => {
           <button onClick={handleSearchCity}>Send</button>
         </div>
       )}
-      {showCity && <City citie={userInput} />}
+      {showCity && (
+        <City citie={userInput} handleSearchCity={handleSearchCity} />
+      )}
     </>
   );
 };
