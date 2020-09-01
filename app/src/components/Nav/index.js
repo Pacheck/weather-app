@@ -1,27 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.css';
 
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
-  const [activeTabController, setActiveTabController] = useState({
-    home: false,
-    search: false,
-    about: false,
-  });
-
-  const [browserUrl, setBrowserUrl] = useState('');
-
   const URL = window.location.href.split('/')[3];
-
-  console.log(URL);
-
+  const parseURL = URL === '' ? 'Home' : URL;
+  const [activeTabController, setActiveTabController] = useState({
+    home: parseURL === 'Home' ? true : false,
+    search: parseURL === 'Search' ? true : false,
+    about: parseURL === 'About' ? true : false,
+  });
   const { home, search, about } = activeTabController;
 
   function handlerTabs(type) {
-    if (type === 'home') {
+    if (type === 'Home') {
       setActiveTabController({ home: true, search: false, about: false });
-    } else if (type === 'search') {
+    } else if (type === 'Search') {
       setActiveTabController({ home: false, search: true, about: false });
     } else {
       setActiveTabController({ home: false, search: false, about: true });
@@ -34,17 +29,17 @@ const Nav = () => {
 
   return (
     <ul className="nav-content">
-      <li className="home" onClick={(e) => handlerTabs('home')}>
+      <li onClick={() => handlerTabs('Home')}>
         <Link to="/" style={setColorTab(home)}>
           Home
         </Link>
       </li>
-      <li className="search" onClick={(e) => handlerTabs('search')}>
+      <li onClick={() => handlerTabs('Search')}>
         <Link to="/Search" style={setColorTab(search)}>
           Search
         </Link>
       </li>
-      <li className="about" onClick={(e) => handlerTabs('about')}>
+      <li onClick={() => handlerTabs('About')}>
         <Link to="/About" style={setColorTab(about)}>
           About
         </Link>
