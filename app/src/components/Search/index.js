@@ -17,10 +17,6 @@ const Search = () => {
     console.log(userInput);
   }
 
-  function handlerClear() {
-    setUserInput('');
-  }
-
   return (
     <>
       {!showCity && (
@@ -29,12 +25,15 @@ const Search = () => {
           <input
             placeholder="type a name"
             value={userInput}
+            autoFocus
             onChange={(e) => setUserInput(e.target.value)}
           />
-          <button onClick={handleSearchCity}>Send</button>
+          <button onClick={handleSearchCity}>Find</button>
         </div>
       )}
-      {showCity && <City citie={userInput} />}
+      {showCity && (
+        <City citie={userInput} handleSearchCity={handleSearchCity} />
+      )}
     </>
   );
 };
