@@ -16,6 +16,7 @@ const API_KEY = 'a872c03613ce4a71b1f265af24764da0';
 const City = (props) => {
   const initialState = {
     cityName: '',
+    countryCode: '',
     temperature: '',
     sunrise: '',
     sunset: '',
@@ -37,6 +38,7 @@ const City = (props) => {
 
     setCityData({
       cityName: data.city_name,
+      countryCode: data.country_code,
       temperature: data.temp,
       sunrise: data.sunrise,
       sunset: data.sunset,
@@ -48,7 +50,7 @@ const City = (props) => {
   };
   return (
     <div className="city-container">
-      <h1 className="city-name">{cityData.cityName}</h1>
+      <h1 className="city-name">{(cityData.cityName, cityData.countryCode)}</h1>
       <img src={cityData.icon}></img>
       <h2 className="city-temperature">{cityData.temperature} ºC</h2>
       <h2 className="city-description">{cityData.description}</h2>
@@ -63,7 +65,7 @@ const City = (props) => {
       <BiArrowBack
         size={40}
         alt="voltar"
-        onClick={props.handlerClear}
+        onClick={props.handleSearchCity}
         style={{ cursor: 'pointer' }}
       />
     </div>
