@@ -29,24 +29,44 @@ input {
   height: 6%;
   padding: 5px;
   outline: none;
+  border: transparent;
+  border-radius: 5px;
+  text-align: center;
 }
 
 input:focus {
   background-color: rgb(196, 215, 221);
 }
 
+input:focus + input::placeholder {
+  background-color: rgb(13, 43, 173);
+  content: '';
+}
+
 button {
   width: 60%;
   height: 8%;
+
   margin-bottom: 24rem;
   margin-top: 0.4rem;
-  border-radius: 1%;
-  outline: none;
+
+  border-radius: 5px;
+  border-color: transparent;
   color: black;
-  transition: 0.5s linear;
+  outline: none;
+
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-size: medium;
+
+  transition: 0.3s ease-out;
 }
+
 button:hover {
   background-image: linear-gradient(rgb(41, 133, 194), rgb(48, 191, 235));
   cursor: pointer;
   border-color: rgba(11, 143, 92, 0.945);
+  color: white;
+  font-size: x-large;
+  text-shadow: 1px 1px black;
 }
