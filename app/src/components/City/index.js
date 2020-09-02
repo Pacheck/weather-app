@@ -50,7 +50,7 @@ const City = (props) => {
   };
   return (
     <div className="city-container">
-      <h1 className="city-name">{(cityData.cityName, cityData.countryCode)}</h1>
+      <h1 className="city-name">{cityData.cityName}</h1>
       <img src={cityData.icon}></img>
       <h2 className="city-temperature">{cityData.temperature} ºC</h2>
       <h2 className="city-description">{cityData.description}</h2>
