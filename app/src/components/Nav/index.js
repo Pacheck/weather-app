@@ -5,12 +5,15 @@ import { Link } from 'react-router-dom';
 
 const Nav = () => {
   const URL = window.location.href.split('/')[3];
+
   const parseURL = URL === '' ? 'Home' : URL;
+
   const [activeTabController, setActiveTabController] = useState({
     home: parseURL === 'Home' ? true : false,
     search: parseURL === 'Search' ? true : false,
     about: parseURL === 'About' ? true : false,
   });
+
   const { home, search, about } = activeTabController;
 
   function handlerTabs(type) {

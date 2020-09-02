@@ -22,6 +22,6 @@ a {
   color: rgb(234, 234, 243);
 }
 
-/* li:hover > a {
+a:hover {
   color: rgba(19, 98, 200, 0.835);
-} */
+}
