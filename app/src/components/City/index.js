@@ -8,6 +8,7 @@ import sunrise from '../../assets/weather-icons/sunrise.png';
 import sunset from '../../assets/weather-icons/sunset.png';
 
 import { BiArrowBack } from 'react-icons/bi';
+import Temp from './Temperature';
 
 const API_KEY = 'a872c03613ce4a71b1f265af24764da0';
 
@@ -24,6 +25,7 @@ const City = (props) => {
   };
 
   const [cityData, setCityData] = useState(initialState);
+  const [switchTemperatures, setSwitchTemperatures] = useState(false);
 
   useEffect(() => {
     axiosGetApi();
@@ -39,7 +41,10 @@ const City = (props) => {
     setCityData({
       cityName: data.city_name,
       countryCode: data.country_code,
-      temperature: data.temp,
+      temperature: {
+        celsius: data.temp + 'ºC',
+        fahrenheit: ((data.temp * 9) / 5 + 32).toFixed(1) + 'ºF',
+      },
       sunrise: data.sunrise,
       sunset: data.sunset,
       icon: `https://www.weatherbit.io/static/img/icons/${data.weather.icon}.png`,
@@ -48,11 +53,27 @@ const City = (props) => {
 
     console.log(response);
   };
+
+  // (22 °C × 9/5) + 32 = 71,6 °F
+
   return (
     <div className="city-container">
-      <h1 className="city-name">{cityData.cityName}</h1>
+      <h1>{cityData.cityName}</h1>
       <img src={cityData.icon}></img>
-      <h2 className="city-temperature">{cityData.temperature} ºC</h2>
+
+      {switchTemperatures ? (
+        <Temp
+          temp={cityData.temperature.celsius}
+          setSwitchTemperatures={setSwitchTemperatures}
+          switchTemperatures={switchTemperatures}
+        />
+      ) : (
+        <Temp
+          temp={cityData.temperature.fahrenheit}
+          setSwitchTemperatures={setSwitchTemperatures}
+          switchTemperatures={switchTemperatures}
+        />
+      )}
       <h2 className="city-description">{cityData.description}</h2>
       <span className="city-sunrise">
         <h2>{cityData.sunrise}</h2>

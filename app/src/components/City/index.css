@@ -15,6 +15,11 @@ h1 {
   text-shadow: 1px 1px black;
 }
 
+svg:hover {
+  color: rgb(31, 49, 212);
+  transition: 0.3s ease-in-out;
+}
+
 .city-sunrise,
 .city-sunset {
   display: flex;
@@ -30,10 +35,6 @@ h1 {
 
 .city-sunset {
   margin-bottom: 25px;
-}
-
-.city-temperature {
-  margin-bottom: 5px;
 }
 
 .city-description {
