@@ -20,8 +20,14 @@
 a {
   text-decoration: none;
   color: rgb(234, 234, 243);
+  flex-direction: row;
+  width: 100%;
+  text-align: center;
+  transition: 0.5s ease-out;
 }
 
 a:hover {
-  color: rgba(19, 98, 200, 0.835);
+  color: rgba(43, 190, 190, 0.712) !important;
+  font-size: 1.6rem;
+  text-shadow: 1px 1px black;
 }

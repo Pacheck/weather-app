@@ -27,26 +27,40 @@ const Nav = () => {
   }
 
   function setColorTab(key) {
-    return key ? { color: 'rgba(19, 98, 200, 0.835)' } : { color: '#fff' };
+    return key
+      ? {
+          color: 'rgba(19, 98, 200, 0.835)',
+        }
+      : { color: '#fff' };
   }
 
   return (
     <ul className="nav-content">
-      <li onClick={() => handlerTabs('Home')}>
-        <Link to="/" style={setColorTab(home)}>
-          Home
-        </Link>
-      </li>
-      <li onClick={() => handlerTabs('Search')}>
-        <Link to="/Search" style={setColorTab(search)}>
-          Search
-        </Link>
-      </li>
-      <li onClick={() => handlerTabs('About')}>
-        <Link to="/About" style={setColorTab(about)}>
-          About
-        </Link>
-      </li>
+      <Link
+        to="/"
+        style={setColorTab(home)}
+        onClick={() => handlerTabs('Home')}
+      >
+        Home
+      </Link>
+
+      <Link
+        className="search"
+        to="/Search"
+        style={setColorTab(search)}
+        onClick={() => handlerTabs('Search')}
+        onChange={console.log('mouse')}
+      >
+        Search
+      </Link>
+
+      <Link
+        to="/About"
+        style={setColorTab(about)}
+        onClick={() => handlerTabs('About')}
+      >
+        About
+      </Link>
     </ul>
   );
 };
