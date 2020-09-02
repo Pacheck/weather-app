@@ -1,0 +1,4 @@
+.temperature:hover {
+  cursor: pointer;
+  color: lightblue;
+}
