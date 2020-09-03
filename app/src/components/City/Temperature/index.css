@@ -2,3 +2,7 @@
   cursor: pointer;
   color: lightblue;
 }
+
+h2:hover {
+  cursor: default;
+}

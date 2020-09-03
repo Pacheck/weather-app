@@ -26,8 +26,10 @@ const City = (props) => {
 
   const [cityData, setCityData] = useState(initialState);
   const [switchTemperatures, setSwitchTemperatures] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     axiosGetApi();
   }, []);
 
@@ -52,45 +54,48 @@ const City = (props) => {
     });
 
     console.log(response);
+    setIsLoading(false);
   };
 
-  // (22 °C × 9/5) + 32 = 71,6 °F
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  } else {
+    return (
+      <div className="city-container">
+        <h1>{cityData.cityName}</h1>
+        <img src={cityData.icon} alt="weather-icon"></img>
 
-  return (
-    <div className="city-container">
-      <h1>{cityData.cityName}</h1>
-      <img src={cityData.icon}></img>
-
-      {switchTemperatures ? (
-        <Temp
-          temp={cityData.temperature.celsius}
-          setSwitchTemperatures={setSwitchTemperatures}
-          switchTemperatures={switchTemperatures}
+        {switchTemperatures ? (
+          <Temp
+            temp={cityData.temperature.celsius}
+            setSwitchTemperatures={setSwitchTemperatures}
+            switchTemperatures={switchTemperatures}
+          />
+        ) : (
+          <Temp
+            temp={cityData.temperature.fahrenheit}
+            setSwitchTemperatures={setSwitchTemperatures}
+            switchTemperatures={switchTemperatures}
+          />
+        )}
+        <h2 className="city-description">{cityData.description}</h2>
+        <span className="city-sunrise">
+          <h2>{cityData.sunrise}</h2>
+          <img src={sunrise} alt="sunrise" />
+        </span>
+        <span className="city-sunset">
+          <h2>{cityData.sunset}</h2>
+          <img src={sunset} alt="sunset" />
+        </span>
+        <BiArrowBack
+          size={40}
+          alt="voltar"
+          onClick={props.handleSearchCity}
+          style={{ cursor: 'pointer' }}
         />
-      ) : (
-        <Temp
-          temp={cityData.temperature.fahrenheit}
-          setSwitchTemperatures={setSwitchTemperatures}
-          switchTemperatures={switchTemperatures}
-        />
-      )}
-      <h2 className="city-description">{cityData.description}</h2>
-      <span className="city-sunrise">
-        <h2>{cityData.sunrise}</h2>
-        <img src={sunrise} alt="sunrise" />
-      </span>
-      <span className="city-sunset">
-        <h2>{cityData.sunset}</h2>
-        <img src={sunset} alt="sunset" />
-      </span>
-      <BiArrowBack
-        size={40}
-        alt="voltar"
-        onClick={props.handleSearchCity}
-        style={{ cursor: 'pointer' }}
-      />
-    </div>
-  );
+      </div>
+    );
+  }
 };
 
 export default City;
