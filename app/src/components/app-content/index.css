@@ -1,25 +1,57 @@
+:root {
+  --start-color: rgb(33, 145, 209);
+  --ending-color: rgb(13, 197, 234);
+  --text-color: white;
+
+  --main-app-color: rgba(8, 223, 238, 0.897);
+  --secondary-app-color: rgb(32, 90, 184);
+}
 .app-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  color: #fff;
+  color: var(--text-color);
 
   width: 40%;
   height: 70%;
 
   /* background-image: linear-gradient(rgb(33, 145, 209), rgb(13, 197, 234)); */
-  background-image: linear-gradient(rgba(8, 223, 238, 0.897), rgb(32, 90, 184));
+  /* background-image: linear-gradient(rgba(8, 223, 238, 0.897), rgb(32, 90, 184)); */
 
-  /* background-image: linear-gradient(to top, #629510 90%, rgb(177, 21, 21) 10%); */
+  background-image: linear-gradient(var(--start-color), var(--ending-color));
 
   box-shadow: 0 0 1em black;
   border-radius: 1%;
+  transition: 4s ease-in-out;
+
+  animation: changeBackground 5s linear infinite;
 }
 
 .app-content .app-container {
   width: 100%;
   border-radius: inherit;
   background-image: none;
+}
+
+/*  */
+
+#teste-content {
+  color: var(--start-color);
+  /* background-image: linear-gradient(
+    var(--main-app-color),
+    var(--secondary-app-color)
+  ); */
+  transition: 4s ease-in-out;
+  /* animation: changeBackground 2s ease infinite alternate; */
+}
+
+@keyframes changeBackground {
+  from {
+    background-image: linear-gradient(var(--start-color), var(--ending-color));
+  }
+  to {
+    background-image: linear-gradient(var(--ending-color), var(--start-color));
+  }
 }
