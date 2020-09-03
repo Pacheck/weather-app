@@ -49,7 +49,6 @@ const Nav = () => {
         to="/Search"
         style={setColorTab(search)}
         onClick={() => handlerTabs('Search')}
-        onChange={console.log('mouse')}
       >
         Search
       </Link>

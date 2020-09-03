@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 //components
 import City from '../City';
