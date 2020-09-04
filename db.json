@@ -1,56 +1,34 @@
 {
-  "produtos": [
+  "favoritos": [
     {
-      "id": 1,
-      "nome": "Hambúrguer",
-      "descricao": "Pão, bife de hambúrguer 90g, salada e batata.",
-      "preco": 8.5,
-      "categoria_id": 1
+      "cityData": {
+        "cityName": "Río",
+        "countryCode": "GR",
+        "temperature": {
+          "celsius": "17.1ºC",
+          "fahrenheit": "62.8ºF"
+        },
+        "sunrise": "04:05",
+        "sunset": "16:55",
+        "icon": "https://www.weatherbit.io/static/img/icons/c01n.png",
+        "description": "Clear sky"
+      },
+      "id": 1
     },
     {
-      "id": 2,
-      "nome": "X-Búrguer",
-      "descricao": "Pão, bife de hambúrguer 90g, 1 fatia de queijo, salada e batata.",
-      "preco": 10.5,
-      "categoria_id": 1
-    },
-    {
-      "id": 3,
-      "nome": "X-Bacon",
-      "descricao": "Pão, bife de hambúrguer 90g, 1 fatia de queijo, 2 fatia de bacon, salada e batata.",
-      "preco": 12.5,
-      "categoria_id": 1
-    },
-    {
-      "id": 4,
-      "nome": "X-Tudo",
-      "descricao": "Pão, 2 bifes de hambúrguer 90g, 2 fatias de queijo, 4 fatias de bacon, salada e batata.",
-      "preco": 14.5,
-      "categoria_id": 1
-    },
-    {
-      "id": 5,
-      "nome": "Coca cola 350ml",
-      "descricao": "",
-      "preco": 5.5,
-      "categoria_id": 2
-    },
-    {
-      "id": 6,
-      "nome": "Coca cola 600ml",
-      "descricao": "",
-      "preco": 7.5,
-      "categoria_id": 2
-    }
-  ],
-  "categorias": [
-    {
-      "id": 1,
-      "nome": "Hambúrgueres"
-    },
-    {
-      "id": 2,
-      "nome": "Refrigerantes"
+      "cityData": {
+        "cityName": "São Paulo",
+        "countryCode": "BR",
+        "temperature": {
+          "celsius": "17.8ºC",
+          "fahrenheit": "64.0ºF"
+        },
+        "sunrise": "09:12",
+        "sunset": "20:57",
+        "icon": "https://www.weatherbit.io/static/img/icons/c02d.png",
+        "description": "Scattered clouds"
+      },
+      "id": 2
     }
   ]
 }
