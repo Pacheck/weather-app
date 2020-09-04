@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-const Temp = ({ temp, switchTemperatures, setSwitchTemperatures, click }) => {
+const Temp = ({ temp, switchTemperatures, setSwitchTemperatures }) => {
   onclick = () => {
     setSwitchTemperatures(!switchTemperatures);
   };
