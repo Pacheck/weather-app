@@ -9,6 +9,7 @@ import City from '../City';
 const Search = () => {
   const [userInput, setUserInput] = useState('');
   const [showCity, setShowCity] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
   function handleSearchCity() {
     if (userInput) {
@@ -23,10 +24,12 @@ const Search = () => {
         <div className="search-container">
           <label>Search for cities</label>
           <input
-            placeholder="type a name"
+            placeholder={isFocused ? '' : 'type a name'}
             value={userInput}
             autoFocus
             onChange={(e) => setUserInput(e.target.value)}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
           />
           <button onClick={handleSearchCity}>Find</button>
         </div>
