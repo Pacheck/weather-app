@@ -30,8 +30,15 @@ const Search = () => {
             onChange={(e) => setUserInput(e.target.value)}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
+            style={
+              isFocused || userInput
+                ? { borderColor: 'transparent' }
+                : { border: '2px solid red' }
+            }
           />
-          <button onClick={handleSearchCity}>Find</button>
+          <button onClick={handleSearchCity} disabled={!userInput}>
+            Find
+          </button>
         </div>
       )}
       {showCity && (
