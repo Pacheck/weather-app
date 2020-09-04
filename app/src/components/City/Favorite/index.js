@@ -7,7 +7,8 @@ async function saveFavoriteOnDatabase(setFavorite, cityData) {
     ...cityData,
   })
     .then((res) => console.log(res))
-    .catch((err) => console.log(err));
+    .catch((err) => console.log({ message: 'Um erro foi encontrado' + err }));
+
   setFavorite(true);
 }
 

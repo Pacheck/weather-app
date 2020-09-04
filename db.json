@@ -1,34 +1,3 @@
 {
-  "favoritos": [
-    {
-      "cityData": {
-        "cityName": "Río",
-        "countryCode": "GR",
-        "temperature": {
-          "celsius": "17.1ºC",
-          "fahrenheit": "62.8ºF"
-        },
-        "sunrise": "04:05",
-        "sunset": "16:55",
-        "icon": "https://www.weatherbit.io/static/img/icons/c01n.png",
-        "description": "Clear sky"
-      },
-      "id": 1
-    },
-    {
-      "cityData": {
-        "cityName": "São Paulo",
-        "countryCode": "BR",
-        "temperature": {
-          "celsius": "17.8ºC",
-          "fahrenheit": "64.0ºF"
-        },
-        "sunrise": "09:12",
-        "sunset": "20:57",
-        "icon": "https://www.weatherbit.io/static/img/icons/c02d.png",
-        "description": "Scattered clouds"
-      },
-      "id": 2
-    }
-  ]
+  "favoritos": []
 }

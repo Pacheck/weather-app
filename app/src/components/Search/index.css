@@ -48,6 +48,7 @@ button {
   border-color: transparent;
   color: black;
   outline: none;
+  box-shadow: 0 0 0.2em rgb(4, 38, 77);
 
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
