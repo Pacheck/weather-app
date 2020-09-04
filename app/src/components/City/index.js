@@ -1,6 +1,9 @@
 import React from 'react';
 import './index.css';
 
+import Temp from './Temperature';
+import Favorite from './Favorite';
+
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
@@ -8,7 +11,6 @@ import sunrise from '../../assets/weather-icons/sunrise.png';
 import sunset from '../../assets/weather-icons/sunset.png';
 
 import { BiArrowBack } from 'react-icons/bi';
-import Temp from './Temperature';
 
 const API_KEY = 'a872c03613ce4a71b1f265af24764da0';
 
@@ -27,6 +29,7 @@ const City = (props) => {
   const [cityData, setCityData] = useState(initialState);
   const [switchTemperatures, setSwitchTemperatures] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -62,9 +65,16 @@ const City = (props) => {
   } else {
     return (
       <div className="city-container">
-        <h1>{cityData.cityName}</h1>
-        <img src={cityData.icon} alt="weather-icon"></img>
+        <h1>
+          {cityData.cityName}{' '}
+          <Favorite
+            favorite={isFavorite}
+            setFavorite={setIsFavorite}
+            cityData={cityData}
+          />
+        </h1>
 
+        <img src={cityData.icon} alt="weather-icon"></img>
         {switchTemperatures ? (
           <Temp
             temp={cityData.temperature.celsius}
