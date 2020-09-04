@@ -18,6 +18,7 @@ const API_KEY = 'a872c03613ce4a71b1f265af24764da0';
 
 const City = (props) => {
   const initialState = {
+    id: 0,
     cityName: '',
     countryCode: '',
     temperature: '',
@@ -27,7 +28,7 @@ const City = (props) => {
   };
 
   const [cityData, setCityData] = useState(initialState);
-  const [switchTemperatures, setSwitchTemperatures] = useState(false);
+  const [switchTemperatures, setSwitchTemperatures] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -44,6 +45,7 @@ const City = (props) => {
     const data = response.data.data[0];
 
     setCityData({
+      id: +1,
       cityName: data.city_name,
       countryCode: data.country_code,
       temperature: {
