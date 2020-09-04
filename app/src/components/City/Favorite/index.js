@@ -11,6 +11,10 @@ async function saveFavoriteOnDatabase(setFavorite, cityData) {
   setFavorite(false);
 }
 
+async function removeFavoriteFromDatabase(setFavorite) {
+  console.log();
+}
+
 const Favorite = ({ favorite, setFavorite, cityData }) => {
   return (
     <>
