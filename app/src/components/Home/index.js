@@ -25,7 +25,11 @@ const Home = () => {
   return (
     <ul>
       {cityList.map((city) => {
-        return <li key={city.id}>{/* <CityCard /> */}</li>;
+        return (
+          <li key={city.id}>
+            <CityCard />
+          </li>
+        );
       })}
     </ul>
   );

@@ -1,3 +1,30 @@
 {
-  "favoritos": []
+  "favoritos": [
+    {
+      "id": 1,
+      "cityName": "Tokyo",
+      "countryCode": "JP",
+      "temperature": {
+        "celsius": "30ºC",
+        "fahrenheit": "86.0ºF"
+      },
+      "sunrise": "20:18",
+      "sunset": "09:02",
+      "icon": "https://www.weatherbit.io/static/img/icons/c02d.png",
+      "description": "Few clouds"
+    },
+    {
+      "id": 2,
+      "cityName": "Kyoto",
+      "countryCode": "JP",
+      "temperature": {
+        "celsius": "33.3ºC",
+        "fahrenheit": "91.9ºF"
+      },
+      "sunrise": "20:34",
+      "sunset": "09:17",
+      "icon": "https://www.weatherbit.io/static/img/icons/c02d.png",
+      "description": "Few clouds"
+    }
+  ]
 }
