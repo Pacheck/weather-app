@@ -1,19 +1,6 @@
 {
   "favoritos": [
     {
-      "id": 1,
-      "cityName": "Tokyo",
-      "countryCode": "JP",
-      "temperature": {
-        "celsius": "30ºC",
-        "fahrenheit": "86.0ºF"
-      },
-      "sunrise": "20:18",
-      "sunset": "09:02",
-      "icon": "https://www.weatherbit.io/static/img/icons/c02d.png",
-      "description": "Few clouds"
-    },
-    {
       "id": 2,
       "cityName": "Kyoto",
       "countryCode": "JP",
@@ -25,6 +12,45 @@
       "sunset": "09:17",
       "icon": "https://www.weatherbit.io/static/img/icons/c02d.png",
       "description": "Few clouds"
+    },
+    {
+      "id": 4,
+      "cityName": "Osaka",
+      "countryCode": "JP",
+      "temperature": {
+        "celsius": "23.9ºC",
+        "fahrenheit": "75.0ºF"
+      },
+      "sunrise": "20:34",
+      "sunset": "09:15",
+      "icon": "https://www.weatherbit.io/static/img/icons/c01d.png",
+      "description": "Clear sky"
+    },
+    {
+      "id": 5,
+      "cityName": "São Paulo",
+      "countryCode": "BR",
+      "temperature": {
+        "celsius": "28.3ºC",
+        "fahrenheit": "82.9ºF"
+      },
+      "sunrise": "09:10",
+      "sunset": "20:58",
+      "icon": "https://www.weatherbit.io/static/img/icons/c01n.png",
+      "description": "Clear sky"
+    },
+    {
+      "id": 6,
+      "cityName": "Río de Janeiro",
+      "countryCode": "MX",
+      "temperature": {
+        "celsius": "16.2ºC",
+        "fahrenheit": "61.2ºF"
+      },
+      "sunrise": "11:53",
+      "sunset": "00:13",
+      "icon": "https://www.weatherbit.io/static/img/icons/c02d.png",
+      "description": "Scattered Clouds"
     }
   ]
 }
