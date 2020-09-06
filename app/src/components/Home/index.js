@@ -1,24 +1,33 @@
 import Axios from 'axios';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
+import CityCard from '../CityCard';
 
 const Home = () => {
-  useEffect(() => {});
+  const [cityList, setCityList] = useState([]);
 
-  async function postIt() {
-    await Axios.post('http://localhost:8080/produtos/', {
-      nome: 'kuat',
-      descricao: 'refrigerante de guaraná 2L',
-      preco: 7.0,
-      categoria_id: 2,
-    })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+  useEffect(() => {
+    getFavoritesFromDatabase();
+  }, []);
+
+  async function getFavoritesFromDatabase() {
+    await Axios.get('http://localhost:8080/favoritos')
+      .then((res) => setCityList(res.data))
+      .catch((err) =>
+        console.log({
+          message: 'GetFavoritesFromDatabase' + err,
+        })
+      );
   }
 
+  console.log(cityList);
+
   return (
-    <h2>
-      <button onClick={() => postIt()}>Pesquisar</button>
-    </h2>
+    <ul>
+      {cityList.map((city) => {
+        return <li key={city.id}>{/* <CityCard /> */}</li>;
+      })}
+    </ul>
   );
 };
 
