@@ -24,7 +24,7 @@
 
   box-shadow: 0 0 1em black;
   border-radius: 1%;
-  transition: 4s ease-in-out;
+  /* transition: 4s ease-in-out; */
 }
 
 .app-content .app-container {
