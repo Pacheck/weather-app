@@ -18,7 +18,7 @@ const API_KEY = 'a872c03613ce4a71b1f265af24764da0';
 
 const City = (props) => {
   const initialState = {
-    id: 0,
+    id: '',
     cityName: '',
     countryCode: '',
     temperature: '',
@@ -35,17 +35,28 @@ const City = (props) => {
   useEffect(() => {
     setIsLoading(true);
     axiosGetApi();
-  }, []);
+  }, [isFavorite]);
 
   const axiosGetApi = async () => {
-    const response = await Axios.get(
+    const favoriteResponse = await Axios.get(
+      `http://localhost:8080/favoritos?cityName=${props.citie}`
+    );
+
+    const path = favoriteResponse.data;
+
+    const FavoriteId = path.length > 0 ? path[0].id : '';
+
+    console.log(favoriteResponse);
+    console.log(FavoriteId);
+
+    const apiResponse = await Axios.get(
       `https://api.weatherbit.io/v2.0/current?city=${props.citie}&key=${API_KEY}`
     ).catch((err) => console.log(err));
 
-    const data = response.data.data[0];
+    const data = apiResponse.data.data[0];
 
     setCityData({
-      id: +1,
+      id: FavoriteId,
       cityName: data.city_name,
       countryCode: data.country_code,
       temperature: {
@@ -58,7 +69,7 @@ const City = (props) => {
       description: data.weather.description,
     });
 
-    console.log(response);
+    console.log(apiResponse);
     setIsLoading(false);
   };
 
