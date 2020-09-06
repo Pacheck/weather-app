@@ -15,11 +15,9 @@ async function saveFavoriteOnDatabase(setFavorite, cityData) {
 async function removeFavoriteFromDatabase(cityData, setFavorite) {
   const { id, cityName } = cityData;
 
-  await Axios.delete(`http://localhost:8080/favoritos/${id}`, {
-    params: {
-      cityName: cityName,
-    },
-  })
+  console.log(id, cityName);
+
+  await Axios.delete(`http://localhost:8080/favoritos/${id}`)
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
 
