@@ -49,6 +49,10 @@ const City = (props) => {
     console.log(favoriteResponse);
     console.log(FavoriteId);
 
+    if (FavoriteId) {
+      setIsFavorite(true);
+    }
+
     const apiResponse = await Axios.get(
       `https://api.weatherbit.io/v2.0/current?city=${props.citie}&key=${API_KEY}`
     ).catch((err) => console.log(err));
