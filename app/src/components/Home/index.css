@@ -1,3 +1,6 @@
+.home-container {
+}
+
 .home-container > h1 {
   margin-top: 15px;
   color: #fff;
@@ -9,10 +12,7 @@
 
   display: grid;
 
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
-}
-
-.home-container li + li {
 }
