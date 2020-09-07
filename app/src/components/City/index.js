@@ -40,7 +40,7 @@ const City = (props) => {
   const axiosGetApi = async () => {
     const favoriteResponse = await Axios.get(
       `http://localhost:8080/favoritos?cityName=${props.citie}`
-    );
+    ).catch((err) => console.log({ favoriteResponse: err }));
 
     const path = favoriteResponse.data;
 
@@ -55,11 +55,15 @@ const City = (props) => {
 
     const apiResponse = await Axios.get(
       `https://api.weatherbit.io/v2.0/current?city=${props.citie}&key=${API_KEY}`
-    ).catch((err) => console.log(err));
+    ).catch((err) =>
+      console.log({
+        apiResponse: err,
+      })
+    );
 
     const data = apiResponse.data.data[0];
 
-    setCityData({
+    const finalState = {
       id: FavoriteId,
       cityName: data.city_name,
       countryCode: data.country_code,
@@ -71,9 +75,24 @@ const City = (props) => {
       sunset: data.sunset,
       icon: `https://www.weatherbit.io/static/img/icons/${data.weather.icon}.png`,
       description: data.weather.description,
-    });
+    };
+
+    const updateResponse = await Axios.put(
+      `http://localhost:8080/favoritos/${props.citieID}`,
+      finalState
+    )
+      .then((res) => console.log(res))
+      .catch((err) => {
+        console.log({
+          updateResponse: err,
+        });
+      });
+
+    // Set States
+    setCityData(finalState);
 
     console.log(apiResponse);
+
     setIsLoading(false);
   };
 
@@ -88,6 +107,8 @@ const City = (props) => {
             favorite={isFavorite}
             setFavorite={setIsFavorite}
             cityData={cityData}
+            updateHomeView={props.updateHomeView}
+            homeView={props.homeView}
           />
         </h1>
 

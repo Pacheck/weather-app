@@ -2,29 +2,36 @@ import Axios from 'axios';
 import React from 'react';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 
-async function saveFavoriteOnDatabase(setFavorite, cityData) {
-  await Axios.post('http://localhost:8080/favoritos/', {
-    ...cityData,
-  })
-    .then((res) => console.log(res))
-    .catch((err) => console.log({ message: 'Um erro foi encontrado' + err }));
+const Favorite = ({
+  favorite,
+  setFavorite,
+  cityData,
+  updateHomeView,
+  homeView,
+}) => {
+  async function saveFavoriteOnDatabase(setFavorite, cityData) {
+    await Axios.post('http://localhost:8080/favoritos/', {
+      ...cityData,
+    })
+      .then((res) => console.log(res))
+      .catch((err) => console.log({ message: 'Um erro foi encontrado' + err }));
 
-  setFavorite(true);
-}
+    setFavorite(true);
+  }
 
-async function removeFavoriteFromDatabase(cityData, setFavorite) {
-  const { id, cityName } = cityData;
+  async function removeFavoriteFromDatabase(cityData, setFavorite) {
+    const { id, cityName } = cityData;
 
-  console.log(id, cityName);
+    console.log(id, cityName);
 
-  await Axios.delete(`http://localhost:8080/favoritos/${id}`)
-    .then((res) => console.log(res))
-    .catch((err) => console.log(err));
+    await Axios.delete(`http://localhost:8080/favoritos/${id}`)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
 
-  setFavorite(false);
-}
+    setFavorite(false);
+    updateHomeView(!homeView);
+  }
 
-const Favorite = ({ favorite, setFavorite, cityData }) => {
   return (
     <>
       {favorite ? (
