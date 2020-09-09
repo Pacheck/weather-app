@@ -12,6 +12,19 @@
       "sunset": "08:58",
       "icon": "https://www.weatherbit.io/static/img/icons/c01d.png",
       "description": "Clear sky"
+    },
+    {
+      "id": 2,
+      "cityName": "Osaka",
+      "countryCode": "JP",
+      "temperature": {
+        "celsius": "31ºC",
+        "fahrenheit": "87.8ºF"
+      },
+      "sunrise": "20:36",
+      "sunset": "09:15",
+      "icon": "https://www.weatherbit.io/static/img/icons/c01d.png",
+      "description": "Clear sky"
     }
   ]
 }
