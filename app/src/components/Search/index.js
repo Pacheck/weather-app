@@ -42,7 +42,11 @@ const Search = () => {
         </div>
       )}
       {showCity && (
-        <City citie={userInput} handleSearchCity={handleSearchCity} />
+        <City
+          citie={userInput}
+          handleSearchCity={handleSearchCity}
+          citieID={undefined} //undefined proposital ( '' )
+        />
       )}
     </>
   );
