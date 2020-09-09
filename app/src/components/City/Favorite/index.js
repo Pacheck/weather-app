@@ -29,7 +29,10 @@ const Favorite = ({
       .catch((err) => console.log(err));
 
     setFavorite(false);
-    updateHomeView(!homeView);
+
+    if (homeView) {
+      updateHomeView(!homeView);
+    }
   }
 
   return (
