@@ -16,7 +16,7 @@ const Home = () => {
     getFavoritesFromDatabase();
   }, [update]);
 
-  console.log(update);
+  // console.log(update);
 
   async function getFavoritesFromDatabase() {
     await Axios.get('http://localhost:8080/favoritos')
