@@ -53,7 +53,7 @@ const Home = () => {
       )}
 
       {!showCity && (
-        <ul>
+        <ul className="ul-container">
           {cityList.map((city) => {
             return (
               <li
