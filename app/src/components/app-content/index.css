@@ -14,6 +14,9 @@
 
   color: var(--text-color);
 
+  max-width: 768px;
+  min-width: 509px;
+
   width: 40%;
   height: 70%;
 
@@ -33,7 +36,14 @@
   background-image: none;
 }
 
-/*  */
+@media (max-width: 535px) {
+  .app-content {
+    width: 100vw;
+    height: 100vh;
 
-#teste-c {
+    min-width: fit-content;
+    min-height: fit-content;
+
+    border-radius: 0;
+  }
 }
