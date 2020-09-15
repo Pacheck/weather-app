@@ -30,7 +30,7 @@ const Favorite = ({
 
     setFavorite(false);
 
-    if (homeView) {
+    if (!homeView) {
       updateHomeView(!homeView);
     }
   }
