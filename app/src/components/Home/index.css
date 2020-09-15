@@ -6,17 +6,17 @@
   color: #fff;
 }
 
-li {
-}
-
 li:nth-child(1) {
   display: grid;
   grid-auto-columns: 1fr 1fr;
 }
 
-ul:nth-child(2) {
-  /* color: tomato; */
-  background-color: rgb(3, 78, 7);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+@media (max-width: 535px) {
+  ul:nth-child(2) {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }

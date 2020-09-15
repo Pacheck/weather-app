@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1>Weather App</h1>
+      <h1>Favorites</h1>
 
       {showCity && (
         <City
