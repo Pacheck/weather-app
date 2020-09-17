@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div>
       <h2>Weather App</h2>
-      <span></span>
+      <h3>city name based</h3>
     </div>
   );
 };
