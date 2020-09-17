@@ -5,11 +5,11 @@
       "cityName": "Kyoto",
       "countryCode": "JP",
       "temperature": {
-        "celsius": "30.3ºC",
-        "fahrenheit": "86.5ºF"
+        "celsius": "30.9ºC",
+        "fahrenheit": "87.6ºF"
       },
-      "sunrise": "20:41",
-      "sunset": "09:05",
+      "sunrise": "20:43",
+      "sunset": "09:02",
       "icon": "https://www.weatherbit.io/static/img/icons/c02d.png",
       "description": "Scattered Clouds"
     },
@@ -18,11 +18,11 @@
       "cityName": "Tokyo",
       "countryCode": "JP",
       "temperature": {
-        "celsius": "28ºC",
-        "fahrenheit": "82.4ºF"
+        "celsius": "26ºC",
+        "fahrenheit": "78.8ºF"
       },
-      "sunrise": "20:24",
-      "sunset": "08:49",
+      "sunrise": "20:26",
+      "sunset": "08:46",
       "icon": "https://www.weatherbit.io/static/img/icons/c04d.png",
       "description": "Overcast clouds"
     }
