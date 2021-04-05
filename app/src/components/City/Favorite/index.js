@@ -10,7 +10,7 @@ const Favorite = ({
   homeView,
 }) => {
   async function saveFavoriteOnDatabase(setFavorite, cityData) {
-    await Axios.post('http://localhost:8080/favoritos/', {
+    await Axios.post('http://localhost:3000/favoritos/', {
       ...cityData,
     })
       .then((res) => console.log(res))
@@ -24,7 +24,7 @@ const Favorite = ({
 
     console.log(id, cityName);
 
-    await Axios.delete(`http://localhost:8080/favoritos/${id}`)
+    await Axios.delete(`http://localhost:3000/favoritos/${id}`)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 

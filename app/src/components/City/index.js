@@ -39,7 +39,7 @@ const City = (props) => {
 
   const axiosGetApi = async () => {
     const favoriteResponse = await Axios.get(
-      `http://localhost:8080/favoritos?cityName=${props.citie}`
+      `http://localhost:3000/favoritos?cityName=${props.citie}`
     ).catch((err) => console.log({ favoriteResponse: err }));
 
     const path = favoriteResponse.data;
@@ -78,7 +78,7 @@ const City = (props) => {
     };
 
     const updateResponse = await Axios.put(
-      `http://localhost:8080/favoritos/${props.citieID}`,
+      `http://localhost:3000/favoritos/${props.citieID}`,
       finalState
     )
       .then((res) => console.log(res))

@@ -5,26 +5,39 @@
       "cityName": "Kyoto",
       "countryCode": "JP",
       "temperature": {
-        "celsius": "30.9ºC",
-        "fahrenheit": "87.6ºF"
+        "celsius": "9.4ºC",
+        "fahrenheit": "48.9ºF"
       },
-      "sunrise": "20:43",
-      "sunset": "09:02",
-      "icon": "https://www.weatherbit.io/static/img/icons/c02d.png",
-      "description": "Scattered Clouds"
+      "sunrise": "20:36",
+      "sunset": "09:22",
+      "icon": "https://www.weatherbit.io/static/img/icons/c04d.png",
+      "description": "Overcast clouds"
     },
     {
       "id": 2,
       "cityName": "Tokyo",
       "countryCode": "JP",
       "temperature": {
-        "celsius": "26ºC",
-        "fahrenheit": "78.8ºF"
+        "celsius": "9.4ºC",
+        "fahrenheit": "48.9ºF"
       },
-      "sunrise": "20:26",
-      "sunset": "08:46",
+      "sunrise": "20:19",
+      "sunset": "09:07",
       "icon": "https://www.weatherbit.io/static/img/icons/c04d.png",
       "description": "Overcast clouds"
+    },
+    {
+      "id": 3,
+      "cityName": "Teixeira de Freitas",
+      "countryCode": "BR",
+      "temperature": {
+        "celsius": "22.7ºC",
+        "fahrenheit": "72.9ºF"
+      },
+      "sunrise": "08:42",
+      "sunset": "20:34",
+      "icon": "https://www.weatherbit.io/static/img/icons/c04n.png",
+      "description": "Overcast Clouds"
     }
   ]
 }

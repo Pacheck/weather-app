@@ -19,7 +19,7 @@ const Home = () => {
   // console.log(update);
 
   async function getFavoritesFromDatabase() {
-    await Axios.get('http://localhost:8080/favoritos')
+    await Axios.get('http://localhost:3000/favoritos')
       .then((res) => setCityList(res.data))
       .catch((err) =>
         console.log({
