@@ -1,11 +1,10 @@
-import React from 'react';
-import './index.css';
+import React, { useCallback, useEffect, useState } from 'react';
+import Axios from 'axios';
 
 import Temp from './Temperature';
 import Favorite from './Favorite';
 
-import { useEffect, useState } from 'react';
-import Axios from 'axios';
+import './index.css';
 
 import sunrise from '../../assets/weather-icons/sunrise.png';
 import sunset from '../../assets/weather-icons/sunset.png';
@@ -15,6 +14,7 @@ import { BiArrowBack } from 'react-icons/bi';
 const API_KEY = 'a872c03613ce4a71b1f265af24764da0';
 
 // const API_KEY2 = '679669d1038ec093aab3530bd83cbbce';
+
 
 const City = (props) => {
   const initialState = {
@@ -32,14 +32,9 @@ const City = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
 
-  useEffect(() => {
-    setIsLoading(true);
-    axiosGetApi();
-  }, [isFavorite]);
-
-  const axiosGetApi = async () => {
+  const axiosGetApi = useCallback(async () => {
     const favoriteResponse = await Axios.get(
-      `http://localhost:3000/favoritos?cityName=${props.citie}`
+      `http://localhost:3001/favoritos?cityName=${props.citie}`
     ).catch((err) => console.log({ favoriteResponse: err }));
 
     const path = favoriteResponse.data;
@@ -78,7 +73,7 @@ const City = (props) => {
     };
 
     const updateResponse = await Axios.put(
-      `http://localhost:3000/favoritos/${props.citieID}`,
+      `http://localhost:3001/favoritos/${props.citieID}`,
       finalState
     )
       .then((res) => console.log(res))
@@ -94,7 +89,20 @@ const City = (props) => {
     console.log(apiResponse);
 
     setIsLoading(false);
-  };
+  })
+
+  // const axiosGetApi = async () => {
+    
+  // };
+
+  useEffect(() => {
+    let isMounted = true;
+    if(isMounted){
+      setIsLoading(true);  
+      axiosGetApi();
+    }
+    return () => { isMounted =  false }
+  }, [isFavorite, axiosGetApi ]);
 
   if (isLoading) {
     return <h1>Loading...</h1>;
