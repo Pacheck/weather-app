@@ -16,8 +16,6 @@ const Home = () => {
     getFavoritesFromDatabase();
   }, [update]);
 
-  // console.log(update);
-
   async function getFavoritesFromDatabase() {
     await Axios.get('http://localhost:3001/favoritos')
       .then((res) => setCityList(res.data))
@@ -55,7 +53,6 @@ const Home = () => {
       {!showCity && (
         <ul className="ul-container">
           {cityList.map((city) => {
-            console.log({ city })
             return (
               <li
                 key={city.id}

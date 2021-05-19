@@ -11,12 +11,8 @@ import sunset from '../../assets/weather-icons/sunset.png';
 
 import { BiArrowBack } from 'react-icons/bi';
 
-const API_KEY = 'a872c03613ce4a71b1f265af24764da0';
-
-// const API_KEY2 = '679669d1038ec093aab3530bd83cbbce';
-
-
 const City = (props) => {
+  console.log({ props })
   const initialState = {
     id: '',
     cityName: '',
@@ -41,15 +37,12 @@ const City = (props) => {
 
     const FavoriteId = path.length > 0 ? path[0].id : '';
 
-    console.log(favoriteResponse);
-    console.log(FavoriteId);
-
     if (FavoriteId) {
       setIsFavorite(true);
     }
 
     const apiResponse = await Axios.get(
-      `https://api.weatherbit.io/v2.0/current?city=${props.citie}&key=${API_KEY}`
+      `https://api.weatherbit.io/v2.0/current?city=${props.citie}&key=${process.env.REACT_APP_API_KEY}`
     ).catch((err) =>
       console.log({
         apiResponse: err,
@@ -72,7 +65,7 @@ const City = (props) => {
       description: data.weather.description,
     };
 
-    const updateResponse = await Axios.put(
+     await Axios.put(
       `http://localhost:3001/favoritos/${props.citieID}`,
       finalState
     )
@@ -91,9 +84,6 @@ const City = (props) => {
     setIsLoading(false);
   })
 
-  // const axiosGetApi = async () => {
-    
-  // };
 
   useEffect(() => {
     let isMounted = true;
@@ -102,7 +92,7 @@ const City = (props) => {
       axiosGetApi();
     }
     return () => { isMounted =  false }
-  }, [isFavorite, axiosGetApi ]);
+  }, [isFavorite]);
 
   if (isLoading) {
     return <h1>Loading...</h1>;
